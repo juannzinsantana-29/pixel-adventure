@@ -18,6 +18,58 @@
       }
 
       #game {
+        width: 900px;
+        max-width: 95vw;
+        height: 550px;
+        max-height: 85vh;
+        background: #6b8e23;
+        border: 5px solid #222;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #player {
+        width: 40px;
+        height: 40px;
+        background: #4b7bec;
+        border: 3px solid white;
+        position: absolute;
+        left: 50%;
+        top: 50%
+        transform: translate(-50%, -50%);
+      }
+
+      #hud {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        z-index: 10;
+      }
+
+      #controls {
+         position: absolute;
+         bottom: 15px;
+         left: 15px;
+         display: flex;
+         gap: 8px;
+      }
+
+      button {
+         width: 55px;
+         height: 55px;
+         font-size: 22px;
+         border: none;
+         border-radius: 10px;
+         background: #333;
+         color: white;
+      } 
+      
+      button:active {
+        background: #666;
+        }
         
         
     </style>
