@@ -1,84 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Adventure</title>
 
     <style>
-      body {
-        margin: 0;
-        background: #171717;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        font-family: Arial, sans-serif;
-      }
+        body {
+            margin: 0;
+            background: #171717;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
 
-      #game {
-        width: 900px;
-        max-width: 95vw;
-        height: 550px;
-        max-height: 85vh;
-        background: #6b8e23;
-        border: 5px solid #222;
-        position: relative;
-        overflow: hidden;
-      }
+        #game {
+            width: 900px;
+            max-width: 95vw;
+            height: 550px;
+            max-height: 85vh;
+            background: #6b8e23;
+            border: 5px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
 
-      #player {
-        width: 40px;
-        height: 40px;
-        background: #4b7bec;
-        border: 3px solid white;
-        position: absolute;
-        left: 50%;
-        top: 50%
-        transform: translate(-50%, -50%);
-      }
+        #player {
+            width: 40px;
+            height: 40px;
+            background: #4b7bec;
+            border: 3px solid white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-      #hud {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-        z-index: 10;
-      }
+        #hud {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 10;
+        }
 
-      #controls {
-         position: absolute;
-         bottom: 15px;
-         left: 15px;
-         display: flex;
-         gap: 8px;
-      }
+        #controls {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            display: flex;
+            gap: 8px;
+        }
 
-      button {
-         width: 55px;
-         height: 55px;
-         font-size: 22px;
-         border: none;
-         border-radius: 10px;
-         background: #333;
-         color: white;
-      } 
-      
-      button:active {
-        background: #666;
-      }
+        button {
+            width: 55px;
+            height: 55px;
+            font-size: 22px;
+            border: none;
+            border-radius: 10px;
+            background: #333;
+            color: white;
+        }
+
+        button:active {
+            background: #666;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
 
 <div id="game">
 
     <div id="hud">
-        ❤️ HP: 100 &nbsp;&nbsp; $$$: 0
+        ❤️ Vida: 100 &nbsp;&nbsp; ⭐ Moedas: 0
     </div>
 
     <div id="player"></div>
@@ -112,7 +111,7 @@
         player.style.transform = "none";
     }
 
-  document.addEventListener("keydown", function(event) {
+    document.addEventListener("keydown", function(event) {
 
     const speed = 10;
 
