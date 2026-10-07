@@ -6,6 +6,63 @@
     <title>Pixel Adventure</title>
 
     <style>
+
+        .tree {
+    position: absolute;
+    font-size: 45px;
+    z-index: 2;
+}
+
+.tree1 {
+    left: 80px;
+    top: 80px;
+}
+
+.tree2 {
+    right: 100px;
+    top: 120px;
+}
+
+.tree3 {
+    left: 180px;
+    bottom: 80px;
+}
+
+.rock {
+    position: absolute;
+    font-size: 30px;
+    z-index: 2;
+}
+
+.rock1 {
+    left: 350px;
+    top: 100px;
+}
+
+.rock2 {
+    right: 300px;
+    bottom: 100px;
+}
+
+.lake {
+    position: absolute;
+    width: 220px;
+    height: 130px;
+    background: #4da6d9;
+    border-radius: 50%;
+    left: 50px;
+    bottom: 40px;
+}
+
+.path {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: #c2a36b;
+    top: 240px;
+    left: 0;
+}
+        
         body {
             margin: 0;
             background: #171717;
@@ -75,6 +132,16 @@
 <body>
 
 <div id="game">
+
+    <div class="tree tree1">🌳</div>
+<div class="tree tree2">🌳</div>
+<div class="tree tree3">🌳</div>
+
+<div class="rock rock1">🪨</div>
+<div class="rock rock2">🪨</div>
+
+<div class="lake"></div>
+<div class="path"></div>
 
     <div id="hud">
         ❤️ Vida: 100 &nbsp;&nbsp; ⭐ Moedas: 0
