@@ -111,6 +111,27 @@
         player.style.top = y + "px";
         player.style.transform = "none";
     }
+
+  document.addEventListener("keydown", function(event) {
+
+    const speed = 10;
+
+    if (event.key === "ArrowUp" || event.key.toLowerCase() === "w") {
+        move(0, -speed);
+    }
+
+    if (event.key === "ArrowDown" || event.key.toLowerCase() === "s") {
+        move(0, speed);
+    }
+
+    if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+        move(-speed, 0);
+    }
+
+    if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+        move(speed, 0);
+    }
+});
 </script>
 
 </body>
