@@ -167,8 +167,15 @@
 
     function move(dx, dy) {
 
-        x += dx;
-        y += dy;
+      const newX = x + dx;
+const newY = y + dy;
+
+if (!canMove(newX, newY)) {
+    return;
+}
+
+x = newX;
+y = newY;
 
         x = Math.max(0, Math.min(game.clientWidth - 46, x));
         y = Math.max(0, Math.min(game.clientHeight - 46, y));
@@ -177,6 +184,42 @@
         player.style.top = y + "px";
         player.style.transform = "none";
     }
+
+    function canMove(newX, newY) {
+
+    const playerRect = {
+        left: newX,
+        right: newX + 46,
+        top: newY,
+        bottom: newY + 46
+    };
+
+    const obstacles = document.querySelectorAll(".obstacle");
+
+    for (const obstacle of obstacles) {
+
+        const rect = obstacle.getBoundingClientRect();
+        const gameRect = game.getBoundingClientRect();
+
+        const obstacleRect = {
+            left: rect.left - gameRect.left,
+            right: rect.right - gameRect.left,
+            top: rect.top - gameRect.top,
+            bottom: rect.bottom - gameRect.top
+        };
+
+        if (
+            playerRect.right > obstacleRect.left &&
+            playerRect.left < obstacleRect.right &&
+            playerRect.bottom > obstacleRect.top &&
+            playerRect.top < obstacleRect.bottom
+        ) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
     document.addEventListener("keydown", function(event) {
 
