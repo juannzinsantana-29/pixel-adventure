@@ -104,16 +104,71 @@
             font-weigh: bold;
             z-index: 10;
         }
-            
-            
 
-        
-        
-            
-            
-            
+        controls {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            display: flex;
+            gap: 8px;
+        }
 
-            
+        button {
+            width: 55px;
+            height: 55px;
+            font-size: 22px;
+            border: nome;
+            border-radius: 10px;
+            background: #333;
+            color: white;
+        }
+
+        button:active {
+            background: #666;
+        }
     </style>
+</head>
 
+<body>
+
+    <div id="game">
+
+        <div id="hud">
+            ❤️ HP: 100 &nbsp;&nbsp; ⭐ $$$: 0
+        </div>
+
+        <div id="player"></div>
+
+        <div id="controls">
+            <button onclick="move(-20, 0)">⬅️</button>
+            <button onclick="move(0, -20)">⬆️</button>
+            <button onclick="move(0, 20)">⬇️</button>
+            <button onclick="move(20, 0)">➡️</button>
+        </div>
+
+    </div>
+
+    <script>
+        const player = document.getElementById("player");
+        const game = document.getElementById("game");
+
+        let x = game.clientWidth / 2 - 20;
+        let y = game.clientHeight / 2 - 20;
+
+        function move(dx, dy) {
+
+            X += dx;
+            y += dy;
+
+            x = Math.max(0, Math.min(game.clientWidth - 46, x));
+            y = Math.max(0, Math.min(game.clientHeight - 46, y));
+
+            player.style.left = x + "px";
+            player.style.top = y + "px";
+            palyer.style.transform = "nome";
+        }
+    </script>
+        
+</body>
+</html>
             
