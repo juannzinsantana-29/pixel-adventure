@@ -6,8 +6,7 @@
     <title>Pixel Adventure</title>
 
     <style>
-        
-        body { 
+        body {
             margin: 0;
             background: #171717;
             display: flex;
@@ -22,7 +21,7 @@
             max-width: 95vw;
             height: 550px;
             max-height: 85vh;
-            backgroud: #6b8e23;
+            background: #6b8e23;
             border: 5px solid #222;
             position: relative;
             overflow: hidden;
@@ -45,7 +44,7 @@
             left: 10px;
             color: white;
             font-size: 20px;
-            font-weigh: bold;
+            font-weight: bold;
             z-index: 10;
         }
 
@@ -61,7 +60,7 @@
             width: 55px;
             height: 55px;
             font-size: 22px;
-            border: nome;
+            border: none;
             border-radius: 10px;
             background: #333;
             color: white;
@@ -78,16 +77,16 @@
 <div id="game">
 
     <div id="hud">
-        ❤️ HP: 100 &nbsp;&nbsp; ⭐ $$$: 0
+        ❤️ Vida: 100 &nbsp;&nbsp; ⭐ Moedas: 0
     </div>
 
     <div id="player"></div>
 
     <div id="controls">
-        <button onclick="move(-20, 0)">⬅️</button>
         <button onclick="move(0, -20)">⬆️</button>
-        <button onclick="move(0, 20)">⬇️</button>
+        <button onclick="move(-20, 0)">⬅️</button>
         <button onclick="move(20, 0)">➡️</button>
+        <button onclick="move(0, 20)">⬇️</button>
     </div>
 
 </div>
@@ -101,7 +100,7 @@
 
     function move(dx, dy) {
 
-        X += dx;
+        x += dx;
         y += dy;
 
         x = Math.max(0, Math.min(game.clientWidth - 46, x));
@@ -109,32 +108,9 @@
 
         player.style.left = x + "px";
         player.style.top = y + "px";
-        palyer.style.transform = "nome";
+        player.style.transform = "none";
     }
-
-        document.addEventListener("Keydown", function(event) {
-
-            const speed = 10;
-
-            if (event.Key === "ArrowUp" || event.Key.toLowerCase() === "w") {
-                 move(0, -seed);
-            }
-
-            if (event.Key === "ArrowDown" || event.Key.toLowerCase() === "s") {
-                 move(0, seed);
-            }
-
-            if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
-                 move(-speed, 0);
-            }
-
-            if (event.Key === "ArrowRight" || event.Key.toLowerCase() === "d") {
-                 move(speed, 0);
-            }
-        });
-      
 </script>
-        
+
 </body>
 </html>
-            
