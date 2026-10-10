@@ -133,76 +133,76 @@
 
 <div id="game">
 
-        <div class="tree tree1">🌳</div>
-        <div class="tree tree2">🌳</div>
-        <div class="tree tree3">🌳</div>
+    <div class="tree tree1">🌳</div>
+    <div class="tree tree2">🌳</div>
+    <div class="tree tree3">🌳</div>
 
-        <div class="rock rock1">🪨</div>
-        <div class="rock rock2">🪨</div>
+    <div class="rock rock1">🪨</div>
+    <div class="rock rock2">🪨</div>
 
-        <div class="lake"></div>
-        <div class="path"></div>
+    <div class="lake"></div>
+    <div class="path"></div>
 
-        <div id="hud">
-            ❤️ HP: 100 &nbsp;&nbsp; ⭐ $$$: 0
-        </div>
-
-        <div id="player"></div>
-
-        <div id="controls">
-            <button onclick="move(-20, 0)">⬅️</button>
-            <button onclick="move(0, -20)">⬆️</button>
-            <button onclick="move(0, 20)">⬇️</button>
-            <button onclick="move(20, 0)">➡️</button>
-        </div>
-
+    <div id="hud">
+        ❤️ HP: 100 &nbsp;&nbsp; ⭐ $$$: 0
     </div>
 
-    <script>
-        const player = document.getElementById("player");
-        const game = document.getElementById("game");
+    <div id="player"></div>
 
-        let x = game.clientWidth / 2 - 20;
-        let y = game.clientHeight / 2 - 20;
+    <div id="controls">
+        <button onclick="move(-20, 0)">⬅️</button>
+        <button onclick="move(0, -20)">⬆️</button>
+        <button onclick="move(0, 20)">⬇️</button>
+        <button onclick="move(20, 0)">➡️</button>
+    </div>
 
-        function move(dx, dy) {
+</div>
 
-            X += dx;
-            y += dy;
+<script>
+    const player = document.getElementById("player");
+    const game = document.getElementById("game");
 
-            x = Math.max(0, Math.min(game.clientWidth - 46, x));
-            y = Math.max(0, Math.min(game.clientHeight - 46, y));
+    let x = game.clientWidth / 2 - 20;
+    let y = game.clientHeight / 2 - 20;
 
-            player.style.left = x + "px";
-            player.style.top = y + "px";
-            palyer.style.transform = "nome";
-        }
+    function move(dx, dy) {
 
-         document.addEventListener("Keydown", function(event) {
+        X += dx;
+        y += dy;
 
-             const speed = 10;
+        x = Math.max(0, Math.min(game.clientWidth - 46, x));
+        y = Math.max(0, Math.min(game.clientHeight - 46, y));
 
-             if (event.Key === "ArrowUp" || event.Key.toLowerCase() === "w") {
+        player.style.left = x + "px";
+        player.style.top = y + "px";
+        palyer.style.transform = "nome";
+    }
+
+        document.addEventListener("Keydown", function(event) {
+
+            const speed = 10;
+
+            if (event.Key === "ArrowUp" || event.Key.toLowerCase() === "w") {
                  move(0, -seed);
-             }
+            }
 
-             if (event.Key === "ArrowDown" || event.Key.toLowerCase() === "s") {
+            if (event.Key === "ArrowDown" || event.Key.toLowerCase() === "s") {
                  move(0, seed);
-             }
+            }
 
-             if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+            if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
                  move(-speed, 0);
-             }
+            }
 
-             if (event.Key === "ArrowRight" || event.Key.toLowerCase() === "d") {
+            if (event.Key === "ArrowRight" || event.Key.toLowerCase() === "d") {
                  move(speed, 0);
-             }
-         });
+            }
+        });
 
              
                  
                       
-    </script>
+</script>
         
 </body>
 </html>
