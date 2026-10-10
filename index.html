@@ -167,6 +167,31 @@
             player.style.top = y + "px";
             palyer.style.transform = "nome";
         }
+
+         document.addEventListener("Keydown", function(event) {
+
+             const speed = 10;
+
+             if (event.Key === "ArrowUp" || event.Key.toLowerCase() === "w") {
+                 move(0, -seed);
+             }
+
+             if (event.Key === "ArrowDown" || event.Key.toLowerCase() === "s") {
+                 move(0, seed);
+             }
+
+             if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+                 move(-speed, 0);
+             }
+
+             if (event.Key === "ArrowRight" || event.Key.toLowerCase() === "d") {
+                 move(speed, 0);
+             }
+         });
+
+             
+                 
+                      
     </script>
         
 </body>
